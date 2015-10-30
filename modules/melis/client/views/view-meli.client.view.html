@@ -1,0 +1,271 @@
+<main>
+    <header class="bg-great-info" >
+        <h1 itemprop="name" class="" data-ng-show="vm.item"> {{::vm.item.title}}
+ 			<!--<span>
+ 				<div class="fb-like fb_iframe_widget"
+                     data-href="http://articulo.mercadolibre.com.ar/MLA-582525904-nueva-imac-me086-2014-apple-215-i5-32ghz-8gb-ram-1tb-wifi-_JM"
+                     data-send="false" data-action="like" data-layout="button" data-width="250" data-show-faces="true"
+                     data-font="arial" fb-xfbml-state="rendered"
+                     fb-iframe-plugin-query="action=like&amp;app_id=175268255910551&amp;container_width=75&amp;font=arial&amp;href=http%3A%2F%2Farticulo.mercadolibre.com.ar%2FMLA-582525904-nueva-imac-me086-2014-apple-215-i5-32ghz-8gb-ram-1tb-wifi-_JM&amp;layout=button&amp;locale=es_LA&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=250">
+ 					<span style="vertical-align: bottom; width: 73px; height: 20px;">
+ 						<iframe name="f1eb4723cc" width="250px" height="1000px" frameborder="0" allowtransparency="true"
+                                allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin"
+                                src="http://www.facebook.com/v2.3/plugins/like.php?action=like&amp;app_id=175268255910551&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FwjDNIDNrTQG.js%3Fversion%3D41%23cb%3Df157bd0c1%26domain%3Darticulo.mercadolibre.com.ar%26origin%3Dhttp%253A%252F%252Farticulo.mercadolibre.com.ar%252Ff31ca5a4fc%26relation%3Dparent.parent&amp;container_width=75&amp;font=arial&amp;href=http%3A%2F%2Farticulo.mercadolibre.com.ar%2FMLA-582525904-nueva-imac-me086-2014-apple-215-i5-32ghz-8gb-ram-1tb-wifi-_JM&amp;layout=button&amp;locale=es_LA&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=250"
+                                style="border: none; visibility: visible; width: 73px; height: 20px;" class=""></iframe>
+ 					</span>
+                </div>
+ 				<div id="fb-root" class=" fb_reset">
+                    <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+                        <div></div>
+                    </div>
+                    <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+                        <div>
+                            <iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true"
+                                    allowfullscreen="true" scrolling="no"
+                                    title="Facebook Cross Domain Communication Frame" aria-hidden="true" tabindex="-1"
+                                    id="fb_xdm_frame_http"
+                                    src="http://static.ak.facebook.com/connect/xd_arbiter/wjDNIDNrTQG.js?version=41#channel=f31ca5a4fc&amp;origin=http%3A%2F%2Farticulo.mercadolibre.com.ar"
+                                    style="border: none;"></iframe>
+                            <iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true"
+                                    allowfullscreen="true" scrolling="no"
+                                    title="Facebook Cross Domain Communication Frame" aria-hidden="true" tabindex="-1"
+                                    id="fb_xdm_frame_https"
+                                    src="https://s-static.ak.facebook.com/connect/xd_arbiter/wjDNIDNrTQG.js?version=41#channel=f31ca5a4fc&amp;origin=http%3A%2F%2Farticulo.mercadolibre.com.ar"
+                                    style="border: none;"></iframe>
+                        </div>
+                    </div>
+                </div>
+ 			</span>-->
+        </h1>
+        <dl class="item-data" data-ng-show="vm.item">
+            <dt class="icon icon-label">Tipo de artículo:</dt>
+            <dd> Artículo {{vm.item.condition === "new" ? 'nuevo' : "usado" }}</dd>
+            <dt class="icon icon-cart">Vendidos:</dt>
+            <dd> {{::vm.item.sold_quantity}}</dd>
+        </dl>
+    </header>
+
+    <section class="short-description bg-great-info" id="shortDescription" data-ng-show="vm.item">
+        <meli-carouser ng-if="vm.item" item="vm.item"></meli-carouser>
+
+        <!--FORM-->
+        <form action="" class="product-info" id="productInfo"
+              method="get">    <!-- data to CHO --> <input type="hidden" name="item_id" value="MLA582390533"> <input
+                type="hidden" name="parent_url"
+                value="http://articulo.mercadolibre.com.ar/MLA-582390533-smart-tv-led-hd-ken-brown-32-kb-32-2260-wi-fi-2-hdmi-_JM">
+            <input type="hidden" name="isLogged" value="true"> <input type="hidden" name="mode" value="page"> <input
+                    id="mpPreferredMethod" type="hidden" name="pm" value=""> <input id="mpPreferredInstallments"
+                                                                                    type="hidden" name="inst"
+                                                                                    value="12"> <input
+                    id="mpPreferredBankId" type="hidden" name="cc_issuer" value=""> <input id="prefsOn" type="hidden"
+                                                                                           name="prefs_on" value="NONE">
+            <fieldset>
+                <legend>Precio</legend>
+                <article class="price ch-price "><strong> {{::vm.item.base_price | currency}}</strong></article>
+            </fieldset>
+            <!-- Cuotas MP -->
+            <fieldset>    <!-- input to set the payments preferences --> <input id="installmentsQuantyHidden"
+                                                                                type="hidden" value="12"> <input
+                    id="installmentsPriceHidden" type="hidden" value="701.08">
+                <legend class="icon ico-pay-methods ">Medios de pago</legend>
+                <article class="pay-methods-row pay-without-mp" style="display: none;" aria-label="ch-modal-2"><p
+                        id="nonMPPaymentMethodsBlock" class="highlight-info">Pago a acordar con el vendedor.</p><a
+                        href="#">Modificar.</a></article>
+                <article class="pay-methods-row pay-with-mp" aria-label="ch-modal-3"><p><strong class="detail-price"
+                                                                                                id="installments"> 12
+                    cuotas de <span class="ch-price">	$ 701<sup>08</sup>	</span> </strong> <strong
+                        id="installmentsWithoutInterestText" class="stand-out" style="display:none;"> Sin
+                    interés </strong> <span id="withInstallmentText" style="">	con <strong
+                        class="mp">MercadoPago</strong>	</span></p>
+
+                    <div class="selected-payment-methods"><p><span class="cards">	<span id="cardFromCombo"
+                                                                                           class="cards"
+                                                                                           style="display:none;"></span>	</span>
+                        <span id="withBankImg" class="promo-bank ch-hide">	<span id="bankImg"></span>	</span></p>
+                    </div>
+                    <ul id="defaultPaymentLogos" class="cards cards-list">
+                        <li><span class="payments-small _visa-small"></span></li>
+                        <li><span class="payments-small _master-small"></span></li>
+                        <li><span class="payments-small _amex-small"></span></li>
+                    </ul>
+                    <a class="morePaymentsBlock more-info" id="morePayments" href="#" title="Ver otros medios">Más
+                        opciones</a></article>
+            </fieldset>
+            <fieldset class="shipment-methods-fildset">
+                <legend class="icon ico-shipment-methods ico-shipment-methods-free">Formas de envío</legend>
+                <article class="shipment-methods">
+                    <div id="quantityError" class="ch-hide"></div>
+                    <p id="destination"
+                       data-default-text="<strong class='stand-out' >Envío gratis a todo el país</strong> por <strong>MercadoEnvíos</strong>"
+                       data-default-subtext="Conoce los tiempos y las formas de envío."
+                       data-default-leyend="Calcular cuándo llega" data-default-subfixedtext=""><strong
+                            class="stand-out">Envío gratis</strong> por <strong>MercadoEnvíos</strong></p>
+
+                    <p class="send-time"> <!-- Complement Info --> <span id="extraInfo"></span> <span id="sendTime">Lo retiras en sucursal OCA a partir del martes <strong>3
+                        de noviembre</strong>.</span></p> <a class="more-info" id="shipLay" href="#"
+                                                             aria-label="ch-modal-4"> Modificar </a>
+
+                    <div class="shipping-v2 ch-hide" id="shippingCalculator">
+                        <div class="shipping-selection">
+                            <div>
+                                <div class="shipping-title"><strong class="shipping-info"> Ingresa tu código
+                                    postal </strong>
+
+                                    <p>Asi podrás calcular el costo de envío y conocer los servicios disponibles</p>
+                                </div>
+                                <div class="zip-code"><p><label for="zipCodeFirst">Código postal:</label> <input
+                                        type="text" placeholder="1430" id="zipCodeFirst" value="1416" maxlength="15">
+                                    <input type="button" id="shippingCalc" class="ch-btn-skin ch-btn-small"
+                                           value="Calcular"> <a class="searchZipCode" rel="nofollow"
+                                                                href="http://www.oca.com.ar/Contenidos_Dinamicos/cpa.asp"
+                                                                onclick="var track = encodeURIComponent('page=ext_zipcode');new Image().src = 'http://dejavu.mercadolibre.com.ar/pixel.gif?dejavu='+track;window.open(this.href,'','toolbar=0,status=0,width=380,height=286');return false;">Buscar
+                                        código</a></p>
+
+                                    <p id="shippingError" class="ch-hide"></p>
+
+                                    <div id="zip-code-info" class="zip-code-info"><p id="zipcode-name"
+                                                                                     class="city ch-hide shipping-bold-city"
+                                                                                     style="display: block;">Envío a
+                                        Capital Federal</p>
+
+                                        <p id="shipping-quantity" class="shipping-quantity"></p></div>
+                                    <div id="shippingCosts" class=""><p id="nonShippingMethods" class="ch-hide"></p>
+                                        <table id="shippingMethods" class="shipping-methods">
+                                            <tbody>
+                                            <tr>
+                                                <th class="time-costs-col shipping-col-normal">Medios de envío</th>
+                                                <th class="costs-col shipping-col-normal">Costo</th>
+                                                <th class="time-col shipping-col-normal">Entrega estimada</th>
+                                            </tr>
+                                            <tr class="method-row">
+                                                <td class="shipping-method-name"><strong><input type="radio"
+                                                                                                data-value:shipping_type="MercadoEnvios"
+                                                                                                data-value:ship_method_id="501045"
+                                                                                                data-value:ship_option_id="509341606"
+                                                                                                data-value:free-shipping="true"
+                                                                                                data-value:shipping_method="509341606"
+                                                                                                checked="checked"
+                                                                                                data-value:display="recommended"
+                                                                                                data-value:methodname="OCA Retiro en Sucursal"
+                                                                                                data-value:zipcode="1416"
+                                                                                                data-value:newck="1416_OCA Retiro en Sucursal"
+                                                                                                data-value:shipping_wording="%3Cstrong%20class%3D%27stand-out%27%3EEnv%26iacute%3Bo%20gratis%3C/strong%3E%20por%20%3Cstrong%3EMercadoEnv%EDos%3C/strong%3E"
+                                                                                                data-value:shipping_subwording="Lo%20retiras%20en%20sucursal%20OCA%20a%20partir%20del%20martes%20%3Cstrong%3E3%20de%20noviembre%3C/strong%3E."
+                                                                                                data-value:shipping_fixed_subwording="Lo%20retiras%20a%20partir%20del%20martes%20%3Cstrong%3E3%20de%20noviembre%3C/strong%3E."
+                                                                                                data-value:shipping_link="Modificar"
+                                                                                                data-value:is_super_express="false"
+                                                                                                data-value:is_loyal_user="false"
+                                                                                                name="zipcode-shipping_method"
+                                                                                                value="1416-509341606">Lo
+                                                    retiro en <a
+                                                            href="http://shipping-frontend.mercadolibre.com.ar/agenciesList/showAgenciesMap/pickup?zip_code=1416"
+                                                            target="_blank">sucursal OCA</a></strong></td>
+                                                <td class="shipping-method-cost"><strong
+                                                        class="stand-out">Gratis</strong></td>
+                                                <td class="shipping-method-speed">Martes <strong>3 de noviembre</strong>.
+                                                </td>
+                                            </tr>
+                                            <tr class="method-row">
+                                                <td class="shipping-method-name"><strong><input type="radio"
+                                                                                                data-value:shipping_type="MercadoEnvios"
+                                                                                                data-value:ship_method_id="73328"
+                                                                                                data-value:ship_option_id="386602675"
+                                                                                                data-value:free-shipping="true"
+                                                                                                data-value:shipping_method="386602675"
+                                                                                                data-value:display="always"
+                                                                                                data-value:methodname="OCA Estándar"
+                                                                                                data-value:zipcode="1416"
+                                                                                                data-value:newck="1416_OCA Estándar"
+                                                                                                data-value:shipping_wording="%3Cstrong%20class%3D%27stand-out%27%3EEnv%26iacute%3Bo%20gratis%3C/strong%3E%20por%20%3Cstrong%20class%3D%27variable-weight%27%3EMercadoEnv%EDos%3C/strong%3E"
+                                                                                                data-value:shipping_subwording="Lo%20recibes%20el%20mi%E9rcoles%20%3Cstrong%20class%3D%27variable-weight%27%3E4%20de%20noviembre%3C/strong%3E."
+                                                                                                data-value:shipping_fixed_subwording=""
+                                                                                                data-value:shipping_link="Modificar"
+                                                                                                data-value:is_super_express="false"
+                                                                                                data-value:is_loyal_user="false"
+                                                                                                name="zipcode-shipping_method"
+                                                                                                value="1416-386602675">OCA
+                                                    Estándar</strong> a mi domicilio
+                                                </td>
+                                                <td class="shipping-method-cost"><strong
+                                                        class="stand-out">Gratis</strong></td>
+                                                <td class="shipping-method-speed">Miércoles <strong>4 de
+                                                    noviembre</strong>.
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="self-pick">
+                                    <input data-value:ship_method_id="toBeAgreed" data-value:shipping_type="toBeAgreed"
+                                           type="radio" name="zipcode-shipping_method" value="toBeAgreed" class="radio"
+                                           id="localPickUp">
+                                    <label for="localPickUp">Lo retiro en domicilio del vendedor</label>
+
+                                    <p class="where">villa urquiza (capital federal)</p>
+
+                                    <p id="local-pickup-quantity" class="local-pickup-quantity"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <p class="submit">
+                                <input type="button" class="ch-btn ch-btn-small" value="Aceptar"
+                                       id="selectShippingMethod">
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </fieldset>
+            <fieldset class="action">
+                <div class="stock-quantity ">
+                    <label for="productStockQuantity">Cantidad: </label>
+
+                    <div class="stock-quantity-inputs" data-component="quantitySelector">
+                        <input class="stock-quantity-increments stock-quantity-increments-disabled" type="button"
+                               name="pop" value="-" ng-click="vm.removeOne()">
+                        <input id="productStockQuantity" class="stock-quantity-input" data-validate="number"
+                               name="quantity" type="number" min="1" max="22" title="Cantidad de unidades" value="1"
+                               autocomplete="off" ng-model="vm.build.qRequired">
+                        <input class="stock-quantity-increments" type="button" name="push" value="+" ng-click="vm.addOne()">
+                    </div>
+                    <span class="unit-measure"></span>
+
+                    <p id="stockAvailableGeneric" class="stock-available" style="color: #D90000; display: none">
+                        Superaste el límite de stock disponible.</p></div>
+                <div class="action-row">
+                    <input type="submit" title="Comprar Smart Tv Led Hd Ken Brown 32 Kb-32-2260 Wi-fi, 2 Hdmi"
+                           value="Comprar" class="ch-btn ch-btn-big" id="BidButtonTop" data-prevent-default="" data-ng-click="vm.buyItem()">
+                    <ul class="socialOptions">
+                        <li id="bookmarkMessage"><a class="favorite ch-points-ltlb" id="bookmark" data-id="MLA582390533"
+                                                    href="#" title="Agregar a favoritos"
+                                                    aria-describedby="ch-tooltip-15"> <i class="ch-icon-heart"></i> </a>
+                        </li>
+                        <li>
+                            <a id="fbShare" href="" title="Compartir en Facebook" aria-describedby="ch-tooltip-16"
+                               class="ch-points-ltlb">Compartir en Facebook</a>
+                        </li>
+                        <li>
+                            <a class="quest scroll-to ch-points-ltlb" id="makeQuest" href="#questions"
+                               title="Hacer una pregunta" aria-describedby="ch-tooltip-17">
+                                <span class="ch-hide">Hacer una pregunta</span>
+                                <i class="ch-icon-comment"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END action-row -->
+            </fieldset>
+            <div class="buyer-protection">
+                <div class="warranty-small">
+                    <p><a href="http://ayuda.mercadolibre.com.ar/ayuda/Compa_Protegida_986">Compra Protegida</a> con
+                        MercadoPago</p>
+
+                    <p>Recibe el producto que compraste o te devolvemos tu dinero.</p>
+                </div>
+            </div>
+        </form>
+    </section>
+    {{vm.item}}
+    <a ui-sref="melis.list">Atrás</a>
+</main>
