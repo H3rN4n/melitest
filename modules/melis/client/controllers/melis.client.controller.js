@@ -25,13 +25,16 @@ angular.module('melis').controller('MelisController', ['Item', '$scope', '$state
       qRequired: 1
     };
 
-    vm.addOne = function(){
-      vm.build.qRequired++;
+    vm.addOrRemove = function(action){
+      if(action === 'add' && vm.build.qRequired < vm.item.available_quantity){
+        vm.build.qRequired++;
+      }
+      if(action === 'remove' && vm.build.qRequired > 1){
+        vm.build.qRequired--;
+      }
     };
 
-    vm.removeOne = function(){
-      vm.build.qRequired--;
-    };
+
 
     vm.buyItem = function(){
       var modal = new $window.ch.Modal();

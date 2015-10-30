@@ -104,117 +104,6 @@
                     <p class="send-time"> <!-- Complement Info --> <span id="extraInfo"></span> <span id="sendTime">Lo retiras en sucursal OCA a partir del martes <strong>3
                         de noviembre</strong>.</span></p> <a class="more-info" id="shipLay" href="#"
                                                              aria-label="ch-modal-4"> Modificar </a>
-
-                    <div class="shipping-v2 ch-hide" id="shippingCalculator">
-                        <div class="shipping-selection">
-                            <div>
-                                <div class="shipping-title"><strong class="shipping-info"> Ingresa tu código
-                                    postal </strong>
-
-                                    <p>Asi podrás calcular el costo de envío y conocer los servicios disponibles</p>
-                                </div>
-                                <div class="zip-code"><p><label for="zipCodeFirst">Código postal:</label> <input
-                                        type="text" placeholder="1430" id="zipCodeFirst" value="1416" maxlength="15">
-                                    <input type="button" id="shippingCalc" class="ch-btn-skin ch-btn-small"
-                                           value="Calcular"> <a class="searchZipCode" rel="nofollow"
-                                                                href="http://www.oca.com.ar/Contenidos_Dinamicos/cpa.asp"
-                                                                onclick="var track = encodeURIComponent('page=ext_zipcode');new Image().src = 'http://dejavu.mercadolibre.com.ar/pixel.gif?dejavu='+track;window.open(this.href,'','toolbar=0,status=0,width=380,height=286');return false;">Buscar
-                                        código</a></p>
-
-                                    <p id="shippingError" class="ch-hide"></p>
-
-                                    <div id="zip-code-info" class="zip-code-info"><p id="zipcode-name"
-                                                                                     class="city ch-hide shipping-bold-city"
-                                                                                     style="display: block;">Envío a
-                                        Capital Federal</p>
-
-                                        <p id="shipping-quantity" class="shipping-quantity"></p></div>
-                                    <div id="shippingCosts" class=""><p id="nonShippingMethods" class="ch-hide"></p>
-                                        <table id="shippingMethods" class="shipping-methods">
-                                            <tbody>
-                                            <tr>
-                                                <th class="time-costs-col shipping-col-normal">Medios de envío</th>
-                                                <th class="costs-col shipping-col-normal">Costo</th>
-                                                <th class="time-col shipping-col-normal">Entrega estimada</th>
-                                            </tr>
-                                            <tr class="method-row">
-                                                <td class="shipping-method-name"><strong><input type="radio"
-                                                                                                data-value:shipping_type="MercadoEnvios"
-                                                                                                data-value:ship_method_id="501045"
-                                                                                                data-value:ship_option_id="509341606"
-                                                                                                data-value:free-shipping="true"
-                                                                                                data-value:shipping_method="509341606"
-                                                                                                checked="checked"
-                                                                                                data-value:display="recommended"
-                                                                                                data-value:methodname="OCA Retiro en Sucursal"
-                                                                                                data-value:zipcode="1416"
-                                                                                                data-value:newck="1416_OCA Retiro en Sucursal"
-                                                                                                data-value:shipping_wording="%3Cstrong%20class%3D%27stand-out%27%3EEnv%26iacute%3Bo%20gratis%3C/strong%3E%20por%20%3Cstrong%3EMercadoEnv%EDos%3C/strong%3E"
-                                                                                                data-value:shipping_subwording="Lo%20retiras%20en%20sucursal%20OCA%20a%20partir%20del%20martes%20%3Cstrong%3E3%20de%20noviembre%3C/strong%3E."
-                                                                                                data-value:shipping_fixed_subwording="Lo%20retiras%20a%20partir%20del%20martes%20%3Cstrong%3E3%20de%20noviembre%3C/strong%3E."
-                                                                                                data-value:shipping_link="Modificar"
-                                                                                                data-value:is_super_express="false"
-                                                                                                data-value:is_loyal_user="false"
-                                                                                                name="zipcode-shipping_method"
-                                                                                                value="1416-509341606">Lo
-                                                    retiro en <a
-                                                            href="http://shipping-frontend.mercadolibre.com.ar/agenciesList/showAgenciesMap/pickup?zip_code=1416"
-                                                            target="_blank">sucursal OCA</a></strong></td>
-                                                <td class="shipping-method-cost"><strong
-                                                        class="stand-out">Gratis</strong></td>
-                                                <td class="shipping-method-speed">Martes <strong>3 de noviembre</strong>.
-                                                </td>
-                                            </tr>
-                                            <tr class="method-row">
-                                                <td class="shipping-method-name"><strong><input type="radio"
-                                                                                                data-value:shipping_type="MercadoEnvios"
-                                                                                                data-value:ship_method_id="73328"
-                                                                                                data-value:ship_option_id="386602675"
-                                                                                                data-value:free-shipping="true"
-                                                                                                data-value:shipping_method="386602675"
-                                                                                                data-value:display="always"
-                                                                                                data-value:methodname="OCA Estándar"
-                                                                                                data-value:zipcode="1416"
-                                                                                                data-value:newck="1416_OCA Estándar"
-                                                                                                data-value:shipping_wording="%3Cstrong%20class%3D%27stand-out%27%3EEnv%26iacute%3Bo%20gratis%3C/strong%3E%20por%20%3Cstrong%20class%3D%27variable-weight%27%3EMercadoEnv%EDos%3C/strong%3E"
-                                                                                                data-value:shipping_subwording="Lo%20recibes%20el%20mi%E9rcoles%20%3Cstrong%20class%3D%27variable-weight%27%3E4%20de%20noviembre%3C/strong%3E."
-                                                                                                data-value:shipping_fixed_subwording=""
-                                                                                                data-value:shipping_link="Modificar"
-                                                                                                data-value:is_super_express="false"
-                                                                                                data-value:is_loyal_user="false"
-                                                                                                name="zipcode-shipping_method"
-                                                                                                value="1416-386602675">OCA
-                                                    Estándar</strong> a mi domicilio
-                                                </td>
-                                                <td class="shipping-method-cost"><strong
-                                                        class="stand-out">Gratis</strong></td>
-                                                <td class="shipping-method-speed">Miércoles <strong>4 de
-                                                    noviembre</strong>.
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="self-pick">
-                                    <input data-value:ship_method_id="toBeAgreed" data-value:shipping_type="toBeAgreed"
-                                           type="radio" name="zipcode-shipping_method" value="toBeAgreed" class="radio"
-                                           id="localPickUp">
-                                    <label for="localPickUp">Lo retiro en domicilio del vendedor</label>
-
-                                    <p class="where">villa urquiza (capital federal)</p>
-
-                                    <p id="local-pickup-quantity" class="local-pickup-quantity"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <p class="submit">
-                                <input type="button" class="ch-btn ch-btn-small" value="Aceptar"
-                                       id="selectShippingMethod">
-                            </p>
-                        </div>
-                    </div>
                 </article>
             </fieldset>
             <fieldset class="action">
@@ -222,12 +111,12 @@
                     <label for="productStockQuantity">Cantidad: </label>
 
                     <div class="stock-quantity-inputs" data-component="quantitySelector">
-                        <input class="stock-quantity-increments stock-quantity-increments-disabled" type="button"
-                               name="pop" value="-" ng-click="vm.removeOne()">
+                        <input class="stock-quantity-increments" ng-class="{'stock-quantity-increments-disabled': (vm.build.qRequired <= 1)}" type="button"
+                               name="pop" value="-" ng-click="vm.addOrRemove('remove')">
                         <input id="productStockQuantity" class="stock-quantity-input" data-validate="number"
                                name="quantity" type="number" min="1" max="22" title="Cantidad de unidades" value="1"
                                autocomplete="off" ng-model="vm.build.qRequired">
-                        <input class="stock-quantity-increments" type="button" name="push" value="+" ng-click="vm.addOne()">
+                        <input class="stock-quantity-increments" type="button" name="push" value="+" ng-click="vm.addOrRemove('add')" ng-class="{'stock-quantity-increments-disabled': (vm.build.qRequired == vm.item.available_quantity)}">
                     </div>
                     <span class="unit-measure"></span>
 

@@ -1,44 +1,23 @@
 <div class="product-gallery-container" id="productGalleryCollection">
     <figure id="gallery_dflt" class="product-gallery thumbs-col-1 ch-points-ltrt ch-enlarge"
-            style="min-height: 500px">
+            style="min-height: 500px" ng-repeat="pic in item.pictures">
+
+        <input type="radio" id="{{'thumbgallery_dflt-' + $index}}" name="product-gallery-thumbnail">
+        <label for="{{'thumbgallery_dflt-' + $index}}">
+            <i class="ch-icon ch-icon-search"></i>
+            <img ng-src="{{pic.url}}" width="40" height="40">
+        </label>
+        <div style="min-height: 500px">
+            <noscript><img itemprop="image" ng-src="{{pic.url}}" ng-alt="{{item.title}}"></noscript>
+            <img ng-aria-posinset="{{$index}}" ng-alt="{{item.title}}"
+                 data-ng-data-enlarge="{{pic.url}}"
+                 ng-src="{{pic.url}}"
+                 ng-data-fixed-img="{{pic.url}}"
+                 ng-title="{{item.title}}">
+        </div>
+
         <a href="#" id="arrowPrev" title="Anterior"><i class="ch-icon-chevron-left"></i></a>
         <a href="#" id="arrowNext" title="Siguiente"><i class="ch-icon-chevron-right"></i></a>
-
-        <div ng-repeat="pic in item.pictures">
-            <input type="radio" id="{{'thumbgallery_dflt-' + $index}}" name="product-gallery-thumbnail" checked="checked">
-            <label for="{{'thumbgallery_dflt-' + $index}}">
-                <i class="ch-icon ch-icon-search"></i>
-                <img ng-src="{{pic.url}}" width="40" height="40">
-            </label>
-            <div style="min-height: 500px">
-                <noscript><img itemprop="image" ng-src="{{pic.url}}" ng-alt="{{item.title}}"></noscript>
-                <img ng-aria-posinset="{{$index}}" ng-alt="{{item.title}}"
-                     data-ng-data-enlarge="{{pic.url}}"
-                     ng-src="{{pic.url}}"
-                     ng-data-fixed-img="{{pic.url}}"
-                     ng-title="{{item.title}}">
-            </div>
-        </div>
-
-
-        <!--
-        <input type="radio" id="thumbgallery_dflt-1" name="product-gallery-thumbnail">
-        <label for="thumbgallery_dflt-1">
-            <i class="ch-icon ch-icon-search"></i>
-            <img src="http://mla-s2-p.mlstatic.com/260601-MLA20357403844_072015-M.jpg" width="40" height="40">
-        </label>
-        <div style="min-height: 500px" class="">
-            <noscript>&lt;img itemprop="image"
-                src="http://mla-s1-p.mlstatic.com/smart-tv-led-hd-ken-brown-32-kb-32-2260-wi-fi-2-hdmi-461701-MLA20385342283_082015-O.jpg"
-                alt="Smart Tv Led Hd Ken Brown 32 Kb-32-2260 Wi-fi, 2 Hdmi"&gt;</noscript>
-            <img aria-posinset="1" alt="Smart Tv Led Hd Ken Brown 32 Kb-32-2260 Wi-fi, 2 Hdmi"
-                 data-enlarge="http://mla-s1-p.mlstatic.com/smart-tv-led-hd-ken-brown-32-kb-32-2260-wi-fi-2-hdmi-461701-MLA20385342283_082015-F.jpg"
-                 src="http://mla-s1-p.mlstatic.com/smart-tv-led-hd-ken-brown-32-kb-32-2260-wi-fi-2-hdmi-461701-MLA20385342283_082015-O.jpg"
-                 data-fixed-img="http://mla-s1-p.mlstatic.com/461701-MLA20385342283_082015-R.jpg"
-                 title="smart tv led hd ken brown 32 kb-32-2260 wi-fi, 2 hdmi">
-        </div>
-
-        -->
 
     </figure>
 </div>
