@@ -6,13 +6,30 @@ angular.module('melis').controller('MelisController', ['Item', '$scope', '$state
     var vm = this;
     vm.authentication = Authentication;
 
+    //Find list of items from ML with MeliSrv
     vm.find = function(text) {
+      vm.isLoading = true;
       MeliSrv.findProducts(text).then(function(data){
         vm.items = data.data.results;
+        vm.isLoading = false;
       });
     };
 
-    // Find existing Meli
+
+
+    /*----------------*/
+    //ITEM PAGE
+    /*----------------*/
+
+    //Bind Item Data on the scope
+    if( Item && Item.data){
+      vm.item = Item.data;
+    }
+    vm.build = {
+      qRequired: 1
+    };
+
+    //Find item by ID from ML with MeliSrv
     vm.findOne = function(id) {
       MeliSrv.getProduct(id).then(function(data){
         console.log(data);
@@ -21,10 +38,8 @@ angular.module('melis').controller('MelisController', ['Item', '$scope', '$state
       });
     };
 
-    vm.build = {
-      qRequired: 1
-    };
 
+    // Add or Remove quantity of the requerired item
     vm.addOrRemove = function(action){
       if(action === 'add' && vm.build.qRequired < vm.item.available_quantity){
         vm.build.qRequired++;
@@ -35,15 +50,11 @@ angular.module('melis').controller('MelisController', ['Item', '$scope', '$state
     };
 
 
-
+    // Buy button listener
     vm.buyItem = function(){
       var modal = new $window.ch.Modal();
       var message = "Lo sentimos, no contamos con stock disponible, reintente más tarde.";
       modal.show(message);
     };
-
-    if( Item && Item.data){
-      vm.item = Item.data;
-    }
   }
   ]);

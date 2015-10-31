@@ -12183,3 +12183,18 @@ strong {
     margin: 20px 0;
   }
 }
+body {
+  background-color: #f4f4f4;
+}
+.list-group {
+  width: 100%;
+}
+.list-group a {
+  display: inline-block;
+  width: 18%;
+  margin: 1%;
+  height: 200px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
