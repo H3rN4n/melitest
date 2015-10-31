@@ -49,24 +49,13 @@
         <meli-carouser ng-if="vm.item" item="vm.item"></meli-carouser>
 
         <!--FORM-->
-        <form action="" class="product-info" id="productInfo"
-              method="get">    <!-- data to CHO --> <input type="hidden" name="item_id" value="MLA582390533"> <input
-                type="hidden" name="parent_url"
-                value="http://articulo.mercadolibre.com.ar/MLA-582390533-smart-tv-led-hd-ken-brown-32-kb-32-2260-wi-fi-2-hdmi-_JM">
-            <input type="hidden" name="isLogged" value="true"> <input type="hidden" name="mode" value="page"> <input
-                    id="mpPreferredMethod" type="hidden" name="pm" value=""> <input id="mpPreferredInstallments"
-                                                                                    type="hidden" name="inst"
-                                                                                    value="12"> <input
-                    id="mpPreferredBankId" type="hidden" name="cc_issuer" value=""> <input id="prefsOn" type="hidden"
-                                                                                           name="prefs_on" value="NONE">
+        <form action="" class="product-info" id="productInfo" method="get">
             <fieldset>
                 <legend>Precio</legend>
-                <article class="price ch-price "><strong> {{::vm.item.base_price | currency}}</strong></article>
+                <article class="price ch-price "><strong ng-bind-html="vm.item.base_price | currency | meliPrice"></strong></article>
             </fieldset>
             <!-- Cuotas MP -->
-            <fieldset>    <!-- input to set the payments preferences --> <input id="installmentsQuantyHidden"
-                                                                                type="hidden" value="12"> <input
-                    id="installmentsPriceHidden" type="hidden" value="701.08">
+            <fieldset>
                 <legend class="icon ico-pay-methods ">Medios de pago</legend>
                 <article class="pay-methods-row pay-without-mp" style="display: none;" aria-label="ch-modal-2"><p
                         id="nonMPPaymentMethodsBlock" class="highlight-info">Pago a acordar con el vendedor.</p><a
