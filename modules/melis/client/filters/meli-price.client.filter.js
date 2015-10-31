@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('melis')
     .filter('meliPrice', ['$sce', function($sce) {
         return function(input) {

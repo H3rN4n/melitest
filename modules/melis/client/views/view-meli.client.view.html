@@ -1,4 +1,5 @@
 <main>
+    <a ui-sref="melis.list">Atrás</a>
     <header class="bg-great-info" >
         <h1 itemprop="name" class="" data-ng-show="vm.item"> {{::vm.item.title}}
  			<!--<span>
@@ -52,7 +53,7 @@
         <form action="" class="product-info" id="productInfo" method="get">
             <fieldset>
                 <legend>Precio</legend>
-                <article class="price ch-price "><strong ng-bind-html="vm.item.base_price | currency | meliPrice"></strong></article>
+                <article class="price ch-price "><strong ng-bind-html="::vm.item.base_price | currency | meliPrice"></strong></article>
             </fieldset>
             <!-- Cuotas MP -->
             <fieldset>
@@ -62,7 +63,7 @@
                         href="#">Modificar.</a></article>
                 <article class="pay-methods-row pay-with-mp" aria-label="ch-modal-3"><p><strong class="detail-price"
                                                                                                 id="installments"> 12
-                    cuotas de <span class="ch-price">	$ 701<sup>08</sup>	</span> </strong> <strong
+                    cuotas de <span class="ch-price" ng-bind-html="::vm.item.base_price | dueCalculator | currency  |meliPrice"></span> </strong> <strong
                         id="installmentsWithoutInterestText" class="stand-out" style="display:none;"> Sin
                     interés </strong> <span id="withInstallmentText" style="">	con <strong
                         class="mp">MercadoPago</strong>	</span></p>
@@ -144,6 +145,4 @@
             </div>
         </form>
     </section>
-    {{vm.item}}
-    <a ui-sref="melis.list">Atrás</a>
 </main>

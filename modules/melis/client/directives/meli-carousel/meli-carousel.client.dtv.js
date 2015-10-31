@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('melis').directive('meliCarouser', function(){
     return {
         restrict: 'E',

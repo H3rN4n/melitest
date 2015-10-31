@@ -16,6 +16,7 @@
     <div class="list-group" data-ng-if="vm.items && vm.items.length">
         <a data-ng-repeat="item in vm.items" data-ng-href="/#!/melis/{{item.id}}" class="list-group-item ch-box-lite">
             <h4 class="list-group-item-heading" data-ng-bind="item.title"></h4>
+            <article class="price ch-price "><strong ng-bind-html="item.price | currency | meliPrice"></strong></article>
             <figure>
                 <img data-ng-src="{{item.thumbnail}}" alt="{{item.title}}"/>
             </figure>
