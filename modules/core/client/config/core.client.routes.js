@@ -17,7 +17,14 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       url: '/',
       templateUrl: 'modules/melis/client/views/list-melis.client.view.html',
       controller: 'MelisController',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      resolve : {
+        Item: [
+          function() {
+            return false;
+          }
+        ]
+      }
     })
     .state('not-found', {
       url: '/not-found',

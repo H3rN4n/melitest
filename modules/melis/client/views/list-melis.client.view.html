@@ -1,27 +1,14 @@
 <section data-ng-init="vm.find('ipod')">
     <div class="page-header">
         <h1>Productos de Mercadolibre</h1>
-
-        <form method="get" action="http://www.mercadolibre.com.ar/jm/search" class="ch-form">
-            <div class="ch-form-row"><label for="product">Find a product:</label><input id="product" type="text"
-                                                                                        name="as_word"
-                                                                                        placeholder="iphone 5"
-                                                                                        class="autocomplete"
-                                                                                        aria-autocomplete="list"
-                                                                                        aria-haspopup="true"
-                                                                                        aria-owns="ch-popover-2"
-                                                                                        autocomplete="off"
-                                                                                        data-side="bottom"
-                                                                                        data-align="left">
-
-                <p class="ch-form-hint">This is working with the MercadoLibre API</p></div>
-            <p class="ch-form-actions"><input type="submit" name="autocompleteSubmit" class="ch-btn"></p></form>
-
+        <hr/>
         <form action="" id="search-products">
-            <input type="text" placeholder="ej: ipod" data-ng-model="vm.findBy"/>
+            <label for="product">Buscar producto:</label>
+            <input type="text" id="product" placeholder="ej: ipod" data-ng-model="vm.findBy"/>
             <input type="submit" class="ch-btn" value="Buscar" data-ng-click="vm.find(vm.findBy)" prevent-default/>
             <span class="ch-loading-big" ng-show="true"></span>
         </form>
+        <hr/>
     </div>
     <div class="list-group" data-ng-if="vm.items && vm.items.length">
         <a data-ng-repeat="item in vm.items" data-ng-href="/#!/melis/{{item.id}}" class="list-group-item ch-box-lite">

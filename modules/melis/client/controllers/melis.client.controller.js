@@ -8,11 +8,13 @@ angular.module('melis').controller('MelisController', ['Item', '$scope', '$state
 
     //Find list of items from ML with MeliSrv
     vm.find = function(text) {
-      vm.isLoading = true;
-      MeliSrv.findProducts(text).then(function(data){
-        vm.items = data.data.results;
-        vm.isLoading = false;
-      });
+      if(text.length){
+        vm.isLoading = true;
+        MeliSrv.findProducts(text).then(function(data){
+          vm.items = data.data.results;
+          vm.isLoading = false;
+        });
+      }
     };
 
 
