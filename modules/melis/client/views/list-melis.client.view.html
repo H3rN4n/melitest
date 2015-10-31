@@ -6,9 +6,12 @@
             <label for="product">Buscar producto:</label>
             <input type="text" id="product" placeholder="ej: ipod" data-ng-model="vm.findBy"/>
             <input type="submit" class="ch-btn" value="Buscar" data-ng-click="vm.find(vm.findBy)" prevent-default/>
-            <span class="ch-loading-big" ng-show="true"></span>
         </form>
         <hr/>
+    </div>
+    <div class="loading-container" ng-show="vm.isLoading">
+        <span class="ch-loading-big"></span>
+        <span class="loading-text-description">Cargando...</span>
     </div>
     <div class="list-group" data-ng-if="vm.items && vm.items.length">
         <a data-ng-repeat="item in vm.items" data-ng-href="/#!/melis/{{item.id}}" class="list-group-item ch-box-lite">

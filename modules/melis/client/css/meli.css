@@ -12198,3 +12198,19 @@ body {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+.loading-container {
+  margin: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+.loading-container .loading-text-description {
+  margin: 10px;
+  width: 100%;
+  display: block;
+}
+.ch-loading-big {
+  background-image: url(/lib/chico/dist/assets/loading-big.gif);
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+}
