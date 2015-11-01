@@ -29,9 +29,12 @@ angular.module('melis').config(['$stateProvider',
       controller: 'MelisController',
       controllerAs: 'vm',
       resolve : {
-        Item: ['MeliSrv', '$stateParams',
-          function(MeliSrv, $stateParams) {
-            return MeliSrv.getProduct($stateParams.meliId);
+        Item: ['MeliSrv', 'MeliNotificationSrv', '$stateParams',
+          function(MeliSrv, MeliNotificationSrv, $stateParams) {
+            return MeliSrv.getProduct($stateParams.meliId).error(function(error, data){
+              console.log(error, data);
+              MeliNotificationSrv.errorConection();
+            });;
           }
         ]
       }

@@ -1,19 +1,23 @@
 'use strict';
 
 // Melis controller
-angular.module('melis').controller('MelisController', ['Item', '$scope', '$stateParams', '$location', 'Authentication', 'MeliSrv', '$window',
-  function(Item, $scope, $stateParams, $location, Authentication, MeliSrv, $window ) {
+angular.module('melis').controller('MelisController', ['Item', '$scope', '$stateParams', '$location', 'Authentication', 'MeliSrv', '$window', 'MeliNotificationSrv',
+  function(Item, $scope, $stateParams, $location, Authentication, MeliSrv, $window, MeliNotificationSrv) {
     var vm = this;
     vm.authentication = Authentication;
 
     //Find list of items from ML with MeliSrv
+
     vm.find = function(text) {
       if(text){
         vm.items = [];
         vm.isLoading = true;
-        MeliSrv.findProducts(text).then(function(data){
+        MeliSrv.findProducts(text).success(function(data){
           vm.items = data.data.results;
           vm.isLoading = false;
+        }).error(function(error, data){
+          console.log(error, data);
+          MeliNotificationSrv.errorConection();
         });
       }
     };
@@ -34,10 +38,13 @@ angular.module('melis').controller('MelisController', ['Item', '$scope', '$state
 
     //Find item by ID from ML with MeliSrv
     vm.findOne = function(id) {
-      MeliSrv.getProduct(id).then(function(data){
+      MeliSrv.getProduct(id).success(function(data){
         console.log(data);
         vm.item = data.data;
         console.log(vm.item);
+      }).error(function(error, data){
+        console.log(error, data);
+        MeliNotificationSrv.errorConection();
       });
     };
 
