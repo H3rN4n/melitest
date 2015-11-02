@@ -6,6 +6,7 @@ module.exports = {
       css: [
         //'public/lib/bootstrap/dist/css/bootstrap.css',
         //'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+        'public/lib/normalize-css/normalize.css',
         'public/lib/chico/dist/ui/chico.min.css'
       ],
       js: [

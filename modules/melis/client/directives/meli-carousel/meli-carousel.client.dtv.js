@@ -4,7 +4,7 @@ angular.module('melis').directive('meliCarouser',['$window', function($window){
     return {
         restrict: 'E',
         templateUrl: 'modules/melis/client/directives/meli-carousel/views/meli-carousel.client.dtv.view.html',
-        transclude: true,
+        replace: true,
         scope: {
             item: '='
         },

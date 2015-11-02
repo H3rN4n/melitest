@@ -1,12 +1,12 @@
 <div class="product-gallery-container" id="productGalleryCollection">
-    <figure id="gallery_dflt" class="product-gallery thumbs-col-1 ch-points-ltrt ch-enlarge"
+    <figure id="gallery_dflt-{{$index}}" class="product-gallery thumbs-col-1 ch-points-ltrt ch-enlarge"
             style="" ng-repeat="pic in item.pictures">
 
         <input type="radio" id="{{'thumbgallery_dflt-' + $index}}" data-ng-checked="($index === 0)" class="example" name="product-gallery-thumbnail">
         <div class="content">
             <label for="{{'thumbgallery_dflt-' + $index}}" class="{{'thumbgallery_dflt-' + $index}}">
                 <i class="ch-icon ch-icon-search"></i>
-                <img ng-src="{{pic.url}}" width="40" height="40">
+                <img class="" ng-src="{{pic.url}}" width="40" height="40">
             </label>
             <div class="box">
                 <noscript><img itemprop="image" ng-src="{{pic.url}}" ng-alt="{{item.title}}"></noscript>

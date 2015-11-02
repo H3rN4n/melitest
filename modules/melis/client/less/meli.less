@@ -1,3 +1,5 @@
+//GENERAL
+
 body {
   background-color: #f4f4f4;
 }
@@ -6,12 +8,13 @@ body {
   width: 100%;
   a {
     display: inline-block;
-    width: 18%;
-    margin: 1%;
+    width: 17%;
+    margin: 0.5%;
     height: 200px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    text-align: center;
   }
 }
 
@@ -36,21 +39,117 @@ body {
 
 .product-info {
   display: inline-block;
+  text-align: left;
+}
+
+//PRODUCT INFO
+.bg-great-info {
+  background-color: #f4f4f4;
+  border-radius: 3px;
+  padding: 20px 10px;
+  text-align: center;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1020px;
+
+  h1 {
+    text-indent: 70px;
+    font-size: 2.3em;
+    line-height: 1.2em;
+    letter-spacing: -1px;
+    font-weight: normal;
+    margin: 10px 0 0;
+    span {
+      width: 75px;
+      height: 20px;
+      text-indent: 0;
+      display: inline-block;
+      .fb_iframe_widget {
+        line-height: 20px;
+        width: 75px;
+        height: 20px;
+        padding-left: 10px;
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+
+      }
+    }
+  }
+
+  .item-data {
+    margin: 10px 0 0 0;
+    line-height: 22px;
+    .icon {
+      overflow: hidden;
+      text-indent: -999px;
+      background: url(http://vip.mlstatic.com/css/assets/vip-sprite-min-14__va491dc1554f.png) no-repeat 0 0 transparent;
+      display: inline-block;
+      height: 25px;
+      position: relative;
+      width: 35px;
+    }
+
+    .icon-label {
+      background-position: -62px -195px;
+      height: 13px;
+      width: 14px;
+    }
+
+    .icon-cart {
+      background-position: -62px -211px;
+      height: 14px;
+      width: 15px;
+    }
+  }
+
+  .item-data, .subtitle {
+    line-height: 1em;
+    position: relative;
+
+    &:after, &:before {
+      border-bottom: 1px solid #ddd;
+      bottom: .4em;
+      content: '';
+      display: block;
+      position: absolute;
+      top: .5em;
+      width: 7em;
+    }
+    &:before{
+      left: -8.1em;
+    }
+
+    &:after {
+      right: -7.9em;
+    }
+
+  }
+
+  dl, dd, dt {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
 }
+
 //MELI CAROUSEL
 .product-gallery-container{
   display: inline-block;
-  position: relative;
   min-height: 550px;
   min-width: 600px;
+  .product-gallery{
+    position: relative;
+  }
+
   input {
     display: none;
   }
   .box{
     display:none;
-    padding:20px;
-    margin:10px;
+    padding: 0 20px;
+    margin: 0 10px;
     position: absolute;
     top: 0px;
     left: 30px;
@@ -60,7 +159,7 @@ body {
       left: 20px;
       top: 45%;
     }
-    
+
     #arrowNext{
       position: absolute;
       right: 20px;
@@ -73,11 +172,9 @@ body {
     vertical-align:top;
 
     label {
-      position: relative;
       width: 40px;
       height: 40px;
-      margin: 10px;
-      position: relative;
+      margin: 0 10px 10px;
 
       i{
         position: absolute;
@@ -90,7 +187,7 @@ body {
         z-index: 10;
         margin: 0;
       }
-      
+
       img {
         position: absolute;
         left: 0;
@@ -101,6 +198,9 @@ body {
       &:hover {
         i{
           visibility: visible;
+          &:before {
+            padding: 13px;
+          }
         }
       }
     }
@@ -111,7 +211,7 @@ body {
   .example:checked + .content .box, /* support para browsers que no soporta ~ */
   .lt-ie9 .box /* si no soporta ninguno de los anteriores */ {
     display:block;
-    
+
     img{
       width: 500px;
       height: 500px;
