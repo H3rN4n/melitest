@@ -33,3 +33,88 @@ body {
   height: 36px;
   display: inline-block;
 }
+
+.product-info {
+  display: inline-block;
+
+}
+//MELI CAROUSEL
+.product-gallery-container{
+  display: inline-block;
+  position: relative;
+  min-height: 550px;
+  min-width: 600px;
+  input {
+    display: none;
+  }
+  .box{
+    display:none;
+    padding:20px;
+    margin:10px;
+    position: absolute;
+    top: 0px;
+    left: 30px;
+
+    #arrowPrev {
+      position: absolute;
+      left: 20px;
+      top: 45%;
+    }
+    
+    #arrowNext{
+      position: absolute;
+      right: 20px;
+      top: 45%;
+    }
+  }
+
+  .content {
+    display:inline-block;
+    vertical-align:top;
+
+    label {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+      position: relative;
+
+      i{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+        visibility: hidden;
+        z-index: 10;
+        margin: 0;
+      }
+      
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 5;
+      }
+
+      &:hover {
+        i{
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+
+  .example:checked ~ .box, /* support para browsers grado A */
+  .example:checked + .content .box, /* support para browsers que no soporta ~ */
+  .lt-ie9 .box /* si no soporta ninguno de los anteriores */ {
+    display:block;
+    
+    img{
+      width: 500px;
+      height: 500px;
+    }
+  }
+}

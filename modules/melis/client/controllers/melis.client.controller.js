@@ -13,7 +13,8 @@ angular.module('melis').controller('MelisController', ['Item', '$scope', '$state
         vm.items = [];
         vm.isLoading = true;
         MeliSrv.findProducts(text).success(function(data){
-          vm.items = data.data.results;
+          console.log(data);
+          vm.items = data.results;
           vm.isLoading = false;
         }).error(function(error, data){
           console.log(error, data);

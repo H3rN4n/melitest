@@ -34,7 +34,7 @@ angular.module('melis').config(['$stateProvider',
             return MeliSrv.getProduct($stateParams.meliId).error(function(error, data){
               console.log(error, data);
               MeliNotificationSrv.errorConection();
-            });;
+            });
           }
         ]
       }

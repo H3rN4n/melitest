@@ -29,3 +29,74 @@ body {
   height: 36px;
   display: inline-block;
 }
+.product-info {
+  display: inline-block;
+}
+.product-gallery-container {
+  display: inline-block;
+  position: relative;
+  min-height: 550px;
+  min-width: 600px;
+}
+.product-gallery-container input {
+  display: none;
+}
+.product-gallery-container .box {
+  display: none;
+  padding: 20px;
+  margin: 10px;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+}
+.product-gallery-container .box #arrowPrev {
+  position: absolute;
+  left: 20px;
+  top: 45%;
+}
+.product-gallery-container .box #arrowNext {
+  position: absolute;
+  right: 20px;
+  top: 45%;
+}
+.product-gallery-container .content {
+  display: inline-block;
+  vertical-align: top;
+}
+.product-gallery-container .content label {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  position: relative;
+}
+.product-gallery-container .content label i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  visibility: hidden;
+  z-index: 10;
+  margin: 0;
+}
+.product-gallery-container .content label img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+.product-gallery-container .content label:hover i {
+  visibility: visible;
+}
+.product-gallery-container .example:checked ~ .box,
+.product-gallery-container .example:checked + .content .box,
+.product-gallery-container .lt-ie9 .box {
+  display: block;
+}
+.product-gallery-container .example:checked ~ .box img,
+.product-gallery-container .example:checked + .content .box img,
+.product-gallery-container .lt-ie9 .box img {
+  width: 500px;
+  height: 500px;
+}

@@ -1,23 +1,23 @@
 <div class="product-gallery-container" id="productGalleryCollection">
     <figure id="gallery_dflt" class="product-gallery thumbs-col-1 ch-points-ltrt ch-enlarge"
-            style="min-height: 500px" ng-repeat="pic in item.pictures">
+            style="" ng-repeat="pic in item.pictures">
 
-        <input type="radio" id="{{'thumbgallery_dflt-' + $index}}" name="product-gallery-thumbnail">
-        <label for="{{'thumbgallery_dflt-' + $index}}">
-            <i class="ch-icon ch-icon-search"></i>
-            <img ng-src="{{pic.url}}" width="40" height="40">
-        </label>
-        <div style="min-height: 500px">
-            <noscript><img itemprop="image" ng-src="{{pic.url}}" ng-alt="{{item.title}}"></noscript>
-            <img ng-aria-posinset="{{$index}}" ng-alt="{{item.title}}"
-                 data-ng-data-enlarge="{{pic.url}}"
-                 ng-src="{{pic.url}}"
-                 ng-data-fixed-img="{{pic.url}}"
-                 title="{{item.title}}">
+        <input type="radio" id="{{'thumbgallery_dflt-' + $index}}" data-ng-checked="($index === 0)" class="example" name="product-gallery-thumbnail">
+        <div class="content">
+            <label for="{{'thumbgallery_dflt-' + $index}}" class="{{'thumbgallery_dflt-' + $index}}">
+                <i class="ch-icon ch-icon-search"></i>
+                <img ng-src="{{pic.url}}" width="40" height="40">
+            </label>
+            <div class="box">
+                <noscript><img itemprop="image" ng-src="{{pic.url}}" ng-alt="{{item.title}}"></noscript>
+                <img ng-aria-posinset="{{$index}}" ng-alt="{{item.title}}"
+                     data-ng-data-enlarge="{{pic.url}}"
+                     ng-src="{{pic.url}}"
+                     ng-data-fixed-img="{{pic.url}}"
+                     title="{{item.title}}">
+                <a href="#" id="arrowPrev" title="Anterior" ng-click="changeImage('prev', $index)"><i class="ch-icon-chevron-left"></i></a>
+                <a href="#" id="arrowNext" title="Siguiente" ng-click="changeImage('next', $index)"><i class="ch-icon-chevron-right"></i></a>
+            </div>
         </div>
-`
-        <a href="#" id="arrowPrev" title="Anterior"><i class="ch-icon-chevron-left"></i></a>
-        <a href="#" id="arrowNext" title="Siguiente"><i class="ch-icon-chevron-right"></i></a>
-
     </figure>
 </div>

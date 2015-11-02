@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('melis').directive('meliCarouser', function(){
+angular.module('melis').directive('meliCarouser',['$window', function($window){
     return {
         restrict: 'E',
         templateUrl: 'modules/melis/client/directives/meli-carousel/views/meli-carousel.client.dtv.view.html',
@@ -9,7 +9,16 @@ angular.module('melis').directive('meliCarouser', function(){
             item: '='
         },
         link: function(scope, element, attr){
-            console.log(scope);
+
+            scope.changeImage = function(action, index){
+                if(action === 'prev'){
+                    $window.$('.thumbgallery_dflt-' + (index - 1)).click();
+                }
+                if(action === 'next'){
+                    $window.$('.thumbgallery_dflt-' + (index + 1)).click();
+                }
+            };
         }
     };
-});
+}
+]);
