@@ -10,6 +10,12 @@ angular.module('melis').directive('meliCarouser',['$window', function($window){
         },
         link: function(scope, element, attr){
 
+            scope.activeIndex = 0;
+
+            scope.setActiveIndex = function(index){
+                scope.activeIndex = index;
+            };
+
             scope.changeImage = function(action, index){
                 if(action === 'prev'){
                     $window.$('.thumbgallery_dflt-' + (index - 1)).click();

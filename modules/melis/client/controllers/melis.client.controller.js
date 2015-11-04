@@ -1,10 +1,9 @@
 'use strict';
 
 // Melis controller
-angular.module('melis').controller('MelisController', ['Item', '$scope', '$stateParams', '$location', 'Authentication', 'MeliSrv', '$window', 'MeliNotificationSrv',
-  function(Item, $scope, $stateParams, $location, Authentication, MeliSrv, $window, MeliNotificationSrv) {
+angular.module('melis').controller('MelisController', ['Item', '$scope', '$stateParams', '$location', 'MeliSrv', '$window', 'MeliNotificationSrv',
+  function(Item, $scope, $stateParams, $location, MeliSrv, $window, MeliNotificationSrv) {
     var vm = this;
-    vm.authentication = Authentication;
 
     //Find list of items from ML with MeliSrv
 

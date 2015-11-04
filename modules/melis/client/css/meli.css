@@ -25,7 +25,7 @@ body {
   display: block;
 }
 .ch-loading-big {
-  background-image: url(/lib/chico/dist/assets/loading-big.gif);
+  background-image: url('/lib/chico/dist/assets/loading-big.gif');
   width: 36px;
   height: 36px;
   display: inline-block;

@@ -105,7 +105,7 @@ module.exports.initViewEngine = function (app) {
 /**
  * Configure Express session
  */
-module.exports.initSession = function (app, db) {
+/*module.exports.initSession = function (app, db) {
   // Express MongoDB session storage
   app.use(session({
     saveUninitialized: true,
@@ -117,19 +117,19 @@ module.exports.initSession = function (app, db) {
       secure: config.sessionCookie.secure && config.secure.ssl
     },
     key: config.sessionKey,
-    store: new MongoStore({
+    /!*store: new MongoStore({
       mongooseConnection: db.connection,
       collection: config.sessionCollection
-    })
+    })*!/
   }));
-};
+};*/
 
 /**
  * Invoke modules server configuration
  */
-module.exports.initModulesConfiguration = function (app, db) {
+module.exports.initModulesConfiguration = function (app) {
   config.files.server.configs.forEach(function (configPath) {
-    require(path.resolve(configPath))(app, db);
+    require(path.resolve(configPath))(app);
   });
 };
 
@@ -216,7 +216,7 @@ module.exports.configureSocketIO = function (app, db) {
 /**
  * Initialize the Express application
  */
-module.exports.init = function (db) {
+module.exports.init = function () {
   // Initialize express app
   var app = express();
 
@@ -230,7 +230,7 @@ module.exports.init = function (db) {
   this.initViewEngine(app);
 
   // Initialize Express session
-  this.initSession(app, db);
+  //this.initSession(app, db);
 
   // Initialize Modules configuration
   this.initModulesConfiguration(app);
@@ -251,7 +251,7 @@ module.exports.init = function (db) {
   this.initErrorRoutes(app);
 
   // Configure Socket.io
-  app = this.configureSocketIO(app, db);
+  //app = this.configureSocketIO(app, db);
 
   return app;
 };

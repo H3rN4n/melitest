@@ -1,10 +1,10 @@
-<div class="product-gallery-container" id="productGalleryCollection">
+<div class="product-gallery-container" id="productGalleryCollection" role="slider" role="slider" aria-labelledby="slider-label" aria-describedby="slider-description" aria-valuemin="0" aria-valuemax="{{item.pictures.length}}" aria-valuenow="{{vm.activeIndex}}">
     <figure id="gallery_dflt-{{$index}}" class="product-gallery thumbs-col-1 ch-points-ltrt ch-enlarge"
             style="" ng-repeat="pic in item.pictures">
 
         <input type="radio" id="{{'thumbgallery_dflt-' + $index}}" data-ng-checked="($index === 0)" class="example" name="product-gallery-thumbnail">
         <div class="content">
-            <label for="{{'thumbgallery_dflt-' + $index}}" class="{{'thumbgallery_dflt-' + $index}}">
+            <label for="{{'thumbgallery_dflt-' + $index}}" class="{{'thumbgallery_dflt-' + $index}}" ng-click="setActiveIndex($index)">
                 <i class="ch-icon ch-icon-search"></i>
                 <img class="" ng-src="{{pic.url}}" width="40" height="40">
             </label>
